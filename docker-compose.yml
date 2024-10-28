@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:13
+    ports:
+      - 5434:5432
+    environment:
+      POSTGRES_USER: postgres_user
+      POSTGRES_PASSWORD: postgres_123
+      POSTGRES_DB: postgres_blockchain_price_tracker
+    networks:
+      - blockchain_price_tracker
+networks:
+  blockchain_price_tracker:
