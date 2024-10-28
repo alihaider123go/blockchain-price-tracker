@@ -17,9 +17,6 @@ COPY .env .env
 # Generate Prisma Client code
 RUN npx prisma generate
 
-# Build
-RUN npm build
-
 EXPOSE 3300
 
 # Command to run the app

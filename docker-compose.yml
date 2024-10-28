@@ -10,17 +10,17 @@ services:
     ports:
       - '5432:5432'
   
-#   backend:
-#     build:
-#       context: .
-#       dockerfile: Dockerfile
-#     ports:
-#       - '3300:3300'
-#     depends_on:
-#       - database
-#     env_file:
-#       - .env
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3300:3300'
+    depends_on:
+      - database
+    env_file:
+      - .env
 
-# volumes:
-#   database:
-#     name: price-tracker-db
+volumes:
+  database:
+    name: price-tracker-db
