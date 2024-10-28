@@ -8,6 +8,9 @@ import { PriceModule } from './price/price.module';
 import { DatabaseModule } from './database/database.module';
 import { UtilService } from './util/util.service';
 import { UtilModule } from './util/util.module';
+import { AlertController } from './alert/alert.controller';
+import { AlertService } from './alert/alert.service';
+import { AlertModule } from './alert/alert.module';
 
 @Module({
     imports: [
@@ -15,9 +18,9 @@ import { UtilModule } from './util/util.module';
         isGlobal: true,
         }),
         PriceModule, 
-        DatabaseModule, UtilModule
+        DatabaseModule, UtilModule, AlertModule
     ],
-    controllers: [AppController, PriceController],
-    providers: [AppService, PriceService, UtilService],
+    controllers: [AppController, PriceController, AlertController],
+    providers: [AppService, PriceService, UtilService, AlertService],
 })
 export class AppModule {}

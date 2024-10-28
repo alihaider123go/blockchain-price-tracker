@@ -15,3 +15,11 @@ model Price {
   value     Float
   timestamp DateTime @default(now())
 }
+
+model Alert {
+  id        Int      @id @default(autoincrement())
+  token_address     String
+  target_price Float
+  email      String
+  createdAt  DateTime @default(now())
+}
