@@ -14,6 +14,9 @@ import { AlertModule } from './alert/alert.module';
 import { EmailService } from './email/email.service';
 import { EmailModule } from './email/email.module';
 import { ScheduleModule } from '@nestjs/schedule';
+import { SwapService } from './swap/swap.service';
+import { SwapController } from './swap/swap.controller';
+import { SwapModule } from './swap/swap.module';
 
 @Module({
     imports: [
@@ -22,9 +25,9 @@ import { ScheduleModule } from '@nestjs/schedule';
             isGlobal: true,
         }),
         PriceModule, 
-        DatabaseModule, UtilModule, AlertModule, EmailModule
+        DatabaseModule,UtilModule, AlertModule, EmailModule, SwapModule
     ],
-    controllers: [AppController, PriceController, AlertController],
-    providers: [AppService, PriceService, UtilService, AlertService, EmailService],
+    controllers: [AppController, PriceController, AlertController, SwapController],
+    providers: [AppService, PriceService, UtilService, AlertService, EmailService, SwapService],
 })
 export class AppModule {}

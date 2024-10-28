@@ -76,7 +76,7 @@ export class PriceService {
         where: { token_address },
         orderBy: { timestamp: 'desc' },
         });
-        return latestPrice.value;
+        return latestPrice ? latestPrice.value : null;
     }
 
     async getPriceOneHourAgo(token_address: string) {
@@ -117,6 +117,13 @@ export class PriceService {
         }
     }
 
+
+
+    // async fetchTokenPrice(token:string) {
+    //     const price =  await this.util.getTokenPrice(token);
+    //     return price;
+    // }
+    
 
 
 }

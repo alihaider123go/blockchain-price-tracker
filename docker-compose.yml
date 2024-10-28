@@ -1,14 +1,26 @@
-version: '3.8'
+version: '3.5'
 services:
-  db:
-    image: postgres:13
-    ports:
-      - 5434:5432
+  database:
+    image: postgres:latest
+    restart: always
     environment:
       POSTGRES_USER: postgres_user
       POSTGRES_PASSWORD: postgres_123
       POSTGRES_DB: postgres_blockchain_price_tracker
-    networks:
-      - blockchain_price_tracker
-networks:
-  blockchain_price_tracker:
+    ports:
+      - '5432:5432'
+  
+#   backend:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     ports:
+#       - '3300:3300'
+#     depends_on:
+#       - database
+#     env_file:
+#       - .env
+
+# volumes:
+#   database:
+#     name: price-tracker-db
