@@ -19,10 +19,10 @@ export class UtilService implements OnModuleInit {
             {
                 tokens: [
                     {
-                        tokenAddress: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2" // WETH
+                        tokenAddress: this.config.get('WETH_TOKEN_ADDRESS') // WETH
                     },
                     {
-                        tokenAddress: "0x7d1afa7b718fb893db30a3abc0cfc608aacfebb0" // Matic
+                        tokenAddress: this.config.get('MATIC_TOKEN_ADDRESS') // Matic
                     }
                 ]
             }

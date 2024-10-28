@@ -11,16 +11,20 @@ import { UtilModule } from './util/util.module';
 import { AlertController } from './alert/alert.controller';
 import { AlertService } from './alert/alert.service';
 import { AlertModule } from './alert/alert.module';
+import { EmailService } from './email/email.service';
+import { EmailModule } from './email/email.module';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
     imports: [
+        ScheduleModule.forRoot(),
         ConfigModule.forRoot({
-        isGlobal: true,
+            isGlobal: true,
         }),
         PriceModule, 
-        DatabaseModule, UtilModule, AlertModule
+        DatabaseModule, UtilModule, AlertModule, EmailModule
     ],
     controllers: [AppController, PriceController, AlertController],
-    providers: [AppService, PriceService, UtilService, AlertService],
+    providers: [AppService, PriceService, UtilService, AlertService, EmailService],
 })
 export class AppModule {}

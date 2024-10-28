@@ -13,10 +13,10 @@ export class PriceController {
 
 
     
-    @Get()
-    async getTokensPrice() {
-        return this.priceService.fetchAndStorePrices();
-    }
+    // @Get()
+    // async getTokensPrice() {
+    //     return this.priceService.fetchAndStorePrices();
+    // }
 
 
 

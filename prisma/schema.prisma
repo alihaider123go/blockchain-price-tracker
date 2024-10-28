@@ -21,5 +21,6 @@ model Alert {
   token_address     String
   target_price Float
   email      String
-  createdAt  DateTime @default(now())
+  isTriggered Boolean @default(false)
+  timestamp  DateTime @default(now())
 }
